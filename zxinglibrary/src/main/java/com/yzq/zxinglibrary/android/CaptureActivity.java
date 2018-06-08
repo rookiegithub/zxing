@@ -267,7 +267,13 @@ public class CaptureActivity extends AppCompatActivity implements SurfaceHolder.
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("扫一扫");
         builder.setMessage(getString(R.string.msg_camera_framework_bug));
-        builder.setPositiveButton(R.string.button_ok, new FinishListener(this));
+//        builder.setPositiveButton(R.string.button_ok, new FinishListener(this));
+        builder.setPositiveButton("开启",new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Toast.makeText(MainActivity.this,"取消",Toast.LENGTH_LONG).show();
+            }
+        });
         builder.setOnCancelListener(new FinishListener(this));
         builder.show();
     }
