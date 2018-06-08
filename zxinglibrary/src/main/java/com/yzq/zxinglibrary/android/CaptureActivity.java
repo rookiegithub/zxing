@@ -274,6 +274,12 @@ public class CaptureActivity extends AppCompatActivity implements SurfaceHolder.
                 Toast.makeText(MainActivity.this,"取消",Toast.LENGTH_LONG).show();
             }
         });
+        builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                // Toast.makeText(MainActivity.this,"取消",Toast.LENGTH_LONG).show();
+            }
+        });
         builder.setOnCancelListener(new FinishListener(this));
         builder.show();
     }
